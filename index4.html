@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>пупупу</title>
+    <link rel="stylesheet" href="style/css/style4.css" />
+    <script type="text/javascript">
+        function toUpperCase(input) {
+            input.value = input.value.toUpperCase();
+        }
+        function ValidAge() {
+            var cardNumber = Math.floor(Math.random() * 1000000) + 1;
+            var familia = document.getElementById('familia').value;
+            var name = document.getElementById('name').value;
+            var myAge = document.getElementById('age').value;
+            if (myAge >= 18) alert('Номер карты:' + cardNumber + '\nФамилия:' + familia + '\nИмя:' + name);
+            else alert('Карты не выдаются клиентам меньше 18 лет.')
+            document.getElementById('age').innerHTML = output;
+            return valid;
+        }
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <div class="title"><h1>Меню</h1></div>
+        <div class="list_menu">
+            <ul>
+                <li><a href="index0.html">Главная</a></li>
+                <li><a href="novinki.html">Новинки</a></li>
+                <li><a href="vse.html">Все изделия</a></li>
+                <li><a href="hapki.html">Головные уборы</a></li>
+                <li><a href="sviter.html">Свитера</a></li>
+                <li><a href="symki.html">Сумки</a></li>
+                <li><a href="igr.html">Игрушки</a></li>
+            </ul>
+        </div>
+        <div class="footer_menu">
+            <p>Soft knitting</p>
+        </div>
+    </div>
+    <div id="container">
+        <div id="header">
+            <ul class="list">
+                <li><a href="novinki.html">Новинки</a></li>
+                <li><a href="vse.html">Все изделия</a></li>
+            </ul>
+            <a class="l" href="index0.html">Soft knitting</a>
+        </div>
+        <form class="contact_form" action="" method="post" name="contact_form">
+            <ul class="form">
+                <li>
+                    <h3>Анкета для карты постоянного клиента</h3>
+                    <p id="message">Пожалуйста заполните все поля формы!</p>
+                </li>
+                <li>
+                    <label for="name">Имя:</label>
+                    <input id="name" name="name" placeholder="Иван" onchange="toUpperCase(this)" />
+                </li>
+                <li>
+                    <lable for="fam">Фамилия:</lable>
+                    <input id="familia" name="fam" placeholder="Иванов" onchange="toUpperCase(this)" />
+                </li>
+                <li>
+                    <lable for="phone">Телефон:</lable>
+                    <input id="phone" name="phone" onchange="toUpperCase(this)" />
+                </li>
+                <li>
+                    <lable for="age">Возраст:</lable>
+                    <input id="age" name="age" />
+                </li>
+                <li>
+                    <input class="knopka" name="button" type="submit" value="Отправить" onClick="ValidAge();" />
+                </li>
+            </ul>
+            <a href="laba.html" class="close">&#10006;</a>
+        </form>
+    </div>
+</body>
+</html>
