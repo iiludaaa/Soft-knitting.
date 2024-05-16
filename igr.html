@@ -1,0 +1,325 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+    <title>пупупу</title>
+    <link rel="stylesheet" href="style/css/igr.css" />
+</head>
+<body>
+    <div class="menu">
+        <div class="title"><h1>Меню</h1></div>
+        <div class="list_menu">
+            <ul>
+                <li><a href="index0.html">Главная</a></li>
+                <li><a href="novinki.html">Новинки</a></li>
+                <li><a href="vse.html">Все изделия</a></li>
+                <li><a href="hapki.html">Головные уборы</a></li>
+                <li><a href="sviter.html">Свитера</a></li>
+                <li><a href="symki.html">Сумки</a></li>
+                <li><a href="igr.html">Игрушки</a></li>
+            </ul>
+        </div>
+        <div class="footer_menu">
+            <p>Soft knitting</p>
+        </div>
+    </div>
+    <div id="container">
+        <div id="header">
+            <ul class="list">
+                <li><a class="m" href="novinki.html">Новинки</a></li>
+                <li><a class="m" href="vse.html">Все изделия</a></li>
+            </ul>
+            <a class="l" href="index0.html">Soft knitting</a>
+            <button class="cart" id="cart">
+                <img class="korzina" src="style/images/korzina.png" alt="Cart" />
+                <div class="cart_num" id="cart_num">0</div>
+            </button>
+        </div>
+        <section class="product">
+            <div class="product_info">
+                <div class="container">
+                    <h1 class="product_title">Игрушки</h1>
+                </div>
+            </div>
+                <div class="card">
+                    <div class="card_top">
+                        <a href="#" class="card_image">
+                            <img src="style/images/igryhki/i1.png"
+                                 alt="медведь" />
+                        </a>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="card_prices">
+                            <div class="card_price card_price-discount">1000</div>
+                            <div class="card_price card_price-common">1000</div>
+                        </div>
+                        <a href="#" class="card_title">
+                            Медведь
+                        </a>
+                        <button class="card_add">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_top">
+                        <a href="#" class="card_image">
+                            <img src="style/images/igryhki/i2.png"
+                                 alt="пингвин" />
+                        </a>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="card_prices">
+                            <div class="card_price card_price-discount">980</div>
+                            <div class="card_price card_price-common">980</div>
+                        </div>
+                        <a href="#" class="card_title">
+                            Пингвин
+                        </a>
+                        <button class="card_add">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_top">
+                        <a href="#" class="card_image">
+                            <img src="style/images/igryhki/i3.png"
+                                 alt="лиса" />
+                        </a>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="card_prices">
+                            <div class="card_price card_price-discount">1100</div>
+                            <div class="card_price card_price-common">1100</div>
+                        </div>
+                        <a href="#" class="card_title">
+                            Лиса
+                        </a>
+                        <button class="card_add">В корзину</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_top">
+                        <a href="#" class="card_image">
+                            <img src="style/images/igryhki/i4.png"
+                                 alt="монстр" />
+                        </a>
+                    </div>
+                    <div class="card_bottom">
+                        <div class="card_prices">
+                            <div class="card_price card_price-discount">950</div>
+                            <div class="card_price card_price-common">950</div>
+                        </div>
+                        <a href="#" class="card_title">
+                            Монстр
+                        </a>
+                        <button class="card_add">В корзину</button>
+                    </div>
+                </div>
+        </section>
+        <div class="pokup">
+            <div class="pokup_container" id="pokup_container">
+                <div class="pokup_item">
+                    <h1 class="pokup_title">Оформление заказа</h1>
+                </div>
+                <div class="pokup_item" id="pokup_product_list">
+                    <div class="pokup_product">
+                        <div class="pokup_product-wrap">
+                            <img src="style/images/hapki/1.png" alt="" class="pokup_product-image" />
+                            <h2 class"pokup_product_title"></h2>
+                        </div>
+                        <div class="pokup_product-wrap">
+                            <div class="pokup_product-price"></div>
+                            <button class="pokup_product-delete">&#10006;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pokup_item">
+                    <div class="pokup_cost">
+                        <h2 class="pokup_cost-title">Итого</h2>
+                        <output class="pokup_cost-value" id="pokup_cost">0</output>
+                    </div>
+                    <div class="pokup_cost">
+                        <h2 class="pokup_cost-title">Скидка</h2>
+                        <output class="pokup_cost-value" id="pokup_discount">0</output>
+                    </div>
+                    <div class="pokup_cost">
+                        <h2 class="pokup_cost-title">Итого со скидкой</h2>
+                        <output class="pokup_cost-value" id="pokup_cost_discount">0</output>
+                    </div>
+                </div>
+                <button class="pokup_close" id="pokup_close">&#10006;</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function toNum(str) {
+            const num = Number(str.replace(/ /g, ""));
+            return num;
+        }
+
+        function toCurrency(num) {
+            const format = new Intl.NumberFormat("ru-RU", {
+                style: "currency",
+                currency: "RUB",
+                minimumFractionDigits: 0,
+            }).format(num);
+            return format;
+        }
+
+        // Корзина
+
+        const cardAddArr = Array.from(document.querySelectorAll(".card_add"));
+        const cartNum = document.querySelector("#cart_num");
+        const cart = document.querySelector("#cart");
+
+        class Cart {
+            products;
+            constructor() {
+                this.products = [];
+            }
+            get count() {
+                return this.products.length;
+            }
+            addProduct(product) {
+                this.products.push(product);
+            }
+            removeProduct(index) {
+                this.products.splice(index, 1);
+            }
+            get cost() {
+                const prices = this.products.map((product) => {
+                    return toNum(product.price);
+                });
+                const sum = prices.reduce((acc, num) => {
+                    return acc + num;
+                }, 0);
+                return sum;
+            }
+            get costDiscount() {
+                const prices = this.products.map((product) => {
+                    return toNum(product.priceDiscount);
+                });
+                const sum = prices.reduce((acc, num) => {
+                    return acc + num;
+                }, 0);
+                return sum;
+            }
+            get discount() {
+                return this.cost - this.costDiscount;
+            }
+        }
+
+        class Product {
+            imageSrc;
+            name;
+            price;
+            priceDiscount;
+            constructor(card) {
+                this.imageSrc = card.querySelector(".card_image").children[0].src;
+                this.name = card.querySelector(".card_title").innerText;
+                this.price = card.querySelector(".card_price-common").innerText;
+                this.priceDiscount = card.querySelector(".card_price-discount").innerText;
+            }
+        }
+
+        const myCart = new Cart();
+
+        if (localStorage.getItem("cart") == null) {
+            localStorage.setItem("cart", JSON.stringify(myCart));
+        }
+
+        const savedCart = JSON.parse(localStorage.getItem("cart"));
+        myCart.products = savedCart.products;
+        cartNum.textContent = myCart.count;
+
+        myCart.products = cardAddArr.forEach((cardAdd) => {
+            cardAdd.addEventListener("click", (e) => {
+                e.preventDefault();
+                const card = e.target.closest(".card");
+                const product = new Product(card);
+                const savedCart = JSON.parse(localStorage.getItem("cart"));
+                myCart.products = savedCart.products;
+                myCart.addProduct(product);
+                localStorage.setItem("cart", JSON.stringify(myCart));
+                cartNum.textContent = myCart.count;
+            });
+        });
+
+        // Попап
+
+        const popup = document.querySelector(".pokup");
+        const popupClose = document.querySelector("#pokup_close");
+        const body = document.body;
+        const popupContainer = document.querySelector("#pokup_container");
+        const popupProductList = document.querySelector("#pokup_product_list");
+        const popupCost = document.querySelector("#pokup_cost");
+        const popupDiscount = document.querySelector("#pokup_discount");
+        const popupCostDiscount = document.querySelector("#pokup_cost_discount");
+
+        cart.addEventListener("click", (e) => {
+            e.preventDefault();
+            popup.classList.add("pokup-open");
+            body.classList.add("lock");
+            popupContainerFill();
+        });
+
+        function popupContainerFill() {
+            popupProductList.innerHTML = null;
+            const savedCart = JSON.parse(localStorage.getItem("cart"));
+            myCart.products = savedCart.products;
+            const productsHTML = myCart.products.map((product) => {
+                const productItem = document.createElement("div");
+                productItem.classList.add("pokup_product");
+
+                const productWrap1 = document.createElement("div");
+                productWrap1.classList.add("pokup_product-wrap");
+                const productWrap2 = document.createElement("div");
+                productWrap2.classList.add("pokup_product-wrap");
+
+                const productImage = document.createElement("img");
+                productImage.classList.add("pokup_product-image");
+                productImage.setAttribute("src", product.imageSrc);
+
+                const productTitle = document.createElement("h2");
+                productTitle.classList.add("pokup_product-title");
+                productTitle.innerHTML = product.name;
+
+                const productPrice = document.createElement("div");
+                productPrice.classList.add("pokup_product-price");
+                productPrice.innerHTML = toCurrency(toNum(product.priceDiscount));
+
+                const productDelete = document.createElement("button");
+                productDelete.classList.add("pokup_product-delete");
+                productDelete.innerHTML = "&#10006;";
+
+                productDelete.addEventListener("click", () => {
+                    myCart.removeProduct(product);
+                    localStorage.setItem("cart", JSON.stringify(myCart));
+                    popupContainerFill();
+                });
+
+                productWrap1.appendChild(productImage);
+                productWrap1.appendChild(productTitle);
+                productWrap2.appendChild(productPrice);
+                productWrap2.appendChild(productDelete);
+                productItem.appendChild(productWrap1);
+                productItem.appendChild(productWrap2);
+
+                return productItem;
+            });
+
+            productsHTML.forEach((productHTML) => {
+                popupProductList.appendChild(productHTML);
+            });
+
+            popupCost.value = toCurrency(myCart.cost);
+            popupDiscount.value = toCurrency(myCart.discount);
+            popupCostDiscount.value = toCurrency(myCart.costDiscount);
+        }
+
+        popupClose.addEventListener("click", (e) => {
+            e.preventDefault();
+            popup.classList.remove("pokup-open");
+            body.classList.remove("lock");
+        });
+
+    </script>
+</body>
+</html>

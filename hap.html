@@ -1,0 +1,341 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+    <title>пупупу</title>
+    <link rel="stylesheet" href="style/css/style.css" />
+</head>
+<body>
+    <div class="menu">
+        <div class="title"><h1>Меню</h1></div>
+        <div class="list_menu">
+            <ul>
+                <li><a class="v" href="index0.html">Главная</a></li>
+                <li><a class="v" href="novinki.html">Новинки</a></li>
+                <li><a class="v" href="vse.html">Все изделия</a></li>
+                <li><a class="v" href="hapki.html">Головные уборы</a></li>
+                <li><a class="v" href="sviter.html">Свитера</a></li>
+                <li><a class="v" href="symki.html">Сумки</a></li>
+                <li><a class="v" href="igr.html">Игрушки</a></li>
+            </ul>
+        </div>
+        <div class="footer_menu">
+            <p>Soft knitting</p>
+        </div>
+    </div>
+    <div id="container">
+        <div id="header">
+            <ul class="list">
+                <li><a class="m" href="novinki.html">Новинки</a></li>
+                <li><a class="m" href="vse.html">Все изделия</a></li>
+            </ul>
+            <a class="l" href="index0.html">Soft knitting</a>
+            <button class="cart" id="cart">
+                <img class="korzina" src="style/images/korzina.png" alt="Cart" />
+                <div class="cart_num" id="cart_num">0</div>
+            </button>
+        </div>
+        <div class="slider">
+            <div class="item">
+                <img src="style/images/4.png">
+            </div>
+            <div class="item">
+                <img src="style/images/5.png">
+            </div>
+            <div class="item">
+                <img src="style/images/6.png">
+            </div>
+            <a class="previous" onclick="previousSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+        <div id="opis">
+            <p><strong>Шапка медведь</strong></p>
+            <p>
+                <div id="rating_bar">
+                    <span id="rate_1">&#9733;</span>
+                    <span id="rate_2">&#9733;</span>
+                    <span id="rate_3">&#9733;</span>
+                    <span id="rate_4">&#9733;</span>
+                    <span id="rate_5">&#9733;</span>
+                </div>
+            </p>
+            <p>1999 руб.</p>
+            <p><button class="kupit" href="#">Купить</button></p>
+            <p>
+                Шапка мишка-это стильный и удобный аксессуар,
+                идеально подходящий для демисезонного периода.
+            </p>
+            <p><strong>One size</strong></p>
+            <p>
+                <a href="#zatemnenie" id="main">
+                    Оставить отзыв
+                </a>
+            </p>
+            <div id="zatemnenie">
+                <div id="okno">
+                    <form class="contact_form" action="" method="post" name="contact_form">
+                        <ul class="form">
+                            <li>
+                                <h3>Оставьте ваш отзыв!!!</h3>
+                                <p id="message">Пожалуйста заполните все поля формы!</p>
+                            </li>
+                            <li>
+                                <label for="name">Имя:</label>
+                                <input type="text" name="name" placeholder="Иван" required />
+                            </li>
+                            <li>
+                                <lable for="fam">Фамилия:</lable>
+                                <input type="text" name="fam" placeholder="Иванов" required />
+                            </li>
+                            <li>
+                                E-mail: <input id="email" name="email" type="text" placeholder="ivanivanov@mail.ru" /><br />
+                            </li>
+                            <li>
+                                <lable for="soo">Сообщение:</lable>
+                                <textarea name="soo" cols="40" rows="6" required></textarea>
+                            </li>
+                            <li>
+                                <input class="knopka" name="button" type="submit" value="Отправить" onClick="ValidMail();" />
+                            </li>
+                        </ul>
+                    </form><br>
+                    <a href="#" class="close">&#10006;</a>
+                </div>
+            </div>
+        </div>
+        <div class="pokup">
+            <div class="pokup_container" id="pokup_container">
+                <div class="pokup_item">
+                    <h1 class="pokup_title">Оформление заказа</h1>
+                </div>
+                <div class="pokup_item" id="pokup_product_list">
+                    <div class="pokup_product">
+                        <div class="pokup_product-wrap">
+                            <img src="style/images/hapki/1.png" alt="" class="pokup_product-image" />
+                            <h2 class"pokup_product_title"></h2>
+                        </div>
+                        <div class="pokup_product-wrap">
+                            <div class="pokup_product-price"></div>
+                            <button class="pokup_product-delete">&#10006;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pokup_item">
+                    <div class="pokup_cost">
+                        <h2 class="pokup_cost-title">Итого</h2>
+                        <output class="pokup_cost-value" id="pokup_cost">0</output>
+                    </div>
+                    <div class="pokup_cost">
+                        <h2 class="pokup_cost-title">Скидка</h2>
+                        <output class="pokup_cost-value" id="pokup_discount">0</output>
+                    </div>
+                    <div class="pokup_cost">
+                        <h2 class="pokup_cost-title">Итого со скидкой</h2>
+                        <output class="pokup_cost-value" id="pokup_cost_discount">0</output>
+                    </div>
+                </div>
+                <button class="pokup_close" id="pokup_close">&#10006;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function nextSlide() {
+                    showSlides(slideIndex += 1);
+                }
+
+                function previousSlide() {
+                    showSlides(slideIndex -= 1);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = 1);
+                }
+
+                function showSlides(n) {
+                    let slides = document.getElementsByClassName("item");
+                    if (n > slides.length) {
+                        slideIndex = 1
+                    }
+                    if (n < 1) {
+                        slideIndex = slides.length
+                    }
+                    for (let slide of slides) {
+                        slide.style.display = "none";
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                }
+                function toNum(str) {
+                    const num = Number(str.replace(/ /g, ""));
+                    return num;
+                }
+
+                function toCurrency(num) {
+                    const format = new Intl.NumberFormat("ru-RU", {
+                        style: "currency",
+                        currency: "RUB",
+                        minimumFractionDigits: 0,
+                    }).format(num);
+                    return format;
+                }
+
+                // Корзина
+
+                const cardAddArr = Array.from(document.querySelectorAll(".card_add"));
+                const cartNum = document.querySelector("#cart_num");
+                const cart = document.querySelector("#cart");
+
+                class Cart {
+                    products;
+                    constructor() {
+                        this.products = [];
+                    }
+                    get count() {
+                        return this.products.length;
+                    }
+                    addProduct(product) {
+                        this.products.push(product);
+                    }
+                    removeProduct(index) {
+                        this.products.splice(index, 1);
+                    }
+                    get cost() {
+                        const prices = this.products.map((product) => {
+                            return toNum(product.price);
+                        });
+                        const sum = prices.reduce((acc, num) => {
+                            return acc + num;
+                        }, 0);
+                        return sum;
+                    }
+                    get costDiscount() {
+                        const prices = this.products.map((product) => {
+                            return toNum(product.priceDiscount);
+                        });
+                        const sum = prices.reduce((acc, num) => {
+                            return acc + num;
+                        }, 0);
+                        return sum;
+                    }
+                    get discount() {
+                        return this.cost - this.costDiscount;
+                    }
+                }
+
+                class Product {
+                    imageSrc;
+                    name;
+                    price;
+                    priceDiscount;
+                    constructor(card) {
+                        this.imageSrc = card.querySelector(".card_image").children[0].src;
+                        this.name = card.querySelector(".card_title").innerText;
+                        this.price = card.querySelector(".card_price-common").innerText;
+                        this.priceDiscount = card.querySelector(".card_price-discount").innerText;
+                    }
+                }
+
+                const myCart = new Cart();
+
+                if (localStorage.getItem("cart") == null) {
+                    localStorage.setItem("cart", JSON.stringify(myCart));
+                }
+
+                const savedCart = JSON.parse(localStorage.getItem("cart"));
+                myCart.products = savedCart.products;
+                cartNum.textContent = myCart.count;
+
+                myCart.products = cardAddArr.forEach((cardAdd) => {
+                    cardAdd.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        const card = e.target.closest(".card");
+                        const product = new Product(card);
+                        const savedCart = JSON.parse(localStorage.getItem("cart"));
+                        myCart.products = savedCart.products;
+                        myCart.addProduct(product);
+                        localStorage.setItem("cart", JSON.stringify(myCart));
+                        cartNum.textContent = myCart.count;
+                    });
+                });
+
+                // Попап
+
+                const popup = document.querySelector(".pokup");
+                const popupClose = document.querySelector("#pokup_close");
+                const body = document.body;
+                const popupContainer = document.querySelector("#pokup_container");
+                const popupProductList = document.querySelector("#pokup_product_list");
+                const popupCost = document.querySelector("#pokup_cost");
+                const popupDiscount = document.querySelector("#pokup_discount");
+                const popupCostDiscount = document.querySelector("#pokup_cost_discount");
+
+                cart.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    popup.classList.add("pokup-open");
+                    body.classList.add("lock");
+                    popupContainerFill();
+                });
+
+                function popupContainerFill() {
+                    popupProductList.innerHTML = null;
+                    const savedCart = JSON.parse(localStorage.getItem("cart"));
+                    myCart.products = savedCart.products;
+                    const productsHTML = myCart.products.map((product) => {
+                        const productItem = document.createElement("div");
+                        productItem.classList.add("pokup_product");
+
+                        const productWrap1 = document.createElement("div");
+                        productWrap1.classList.add("pokup_product-wrap");
+                        const productWrap2 = document.createElement("div");
+                        productWrap2.classList.add("pokup_product-wrap");
+
+                        const productImage = document.createElement("img");
+                        productImage.classList.add("pokup_product-image");
+                        productImage.setAttribute("src", product.imageSrc);
+
+                        const productTitle = document.createElement("h2");
+                        productTitle.classList.add("pokup_product-title");
+                        productTitle.innerHTML = product.name;
+
+                        const productPrice = document.createElement("div");
+                        productPrice.classList.add("pokup_product-price");
+                        productPrice.innerHTML = toCurrency(toNum(product.priceDiscount));
+
+                        const productDelete = document.createElement("button");
+                        productDelete.classList.add("pokup_product-delete");
+                        productDelete.innerHTML = "&#10006;";
+
+                        productDelete.addEventListener("click", () => {
+                            myCart.removeProduct(product);
+                            localStorage.setItem("cart", JSON.stringify(myCart));
+                            popupContainerFill();
+                        });
+
+                        productWrap1.appendChild(productImage);
+                        productWrap1.appendChild(productTitle);
+                        productWrap2.appendChild(productPrice);
+                        productWrap2.appendChild(productDelete);
+                        productItem.appendChild(productWrap1);
+                        productItem.appendChild(productWrap2);
+
+                        return productItem;
+                    });
+
+                    productsHTML.forEach((productHTML) => {
+                        popupProductList.appendChild(productHTML);
+                    });
+
+                    popupCost.value = toCurrency(myCart.cost);
+                    popupDiscount.value = toCurrency(myCart.discount);
+                    popupCostDiscount.value = toCurrency(myCart.costDiscount);
+                }
+
+                popupClose.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    popup.classList.remove("pokup-open");
+                    body.classList.remove("lock");
+                });
+    </script>
+</body>
+</html>
